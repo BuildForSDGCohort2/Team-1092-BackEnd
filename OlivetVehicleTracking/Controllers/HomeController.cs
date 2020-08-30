@@ -6,11 +6,31 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace OlivetVehicleTracking.Controllers
 {
-    public class HomeController : Controller
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class HomeController : ControllerBase
     {
         public IActionResult Index()
         {
-            return View();
+            return Ok();
+        }
+
+        [HttpGet("{PlateNo}")]
+        public IActionResult SearchVehicleByPlateNo(string PlateNo)
+        {
+            return Ok();
+        }
+
+        [HttpGet("{PlateNo}")]
+        public IActionResult GetTrackerDataForVehicle(string PlateNo)
+        {
+            return Ok();
+        }
+
+        [HttpGet("{PlateNo}")]
+        public IActionResult GetViolationForVehicle(string PlateNo)
+        {
+            return Ok();
         }
     }
 }
